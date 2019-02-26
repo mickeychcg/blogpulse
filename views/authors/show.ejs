@@ -1,4 +1,6 @@
-<h1>Author: <% author.name %></h1>
+<a href="/">&larr; Back Home</a>
+
+<h1>Author: <%= author.name %></h1>
 
 <a href="/post/new">Create a New Post</a>
 
@@ -9,7 +11,7 @@
 <% author.posts.forEach(function(post) { %>
   <div class="well">
     <h3>
-      <a href="/posts/<%= post.id %>"><%=post.title %><</a>
+      <a href="/posts/<%= post.id %>"><%=post.title %></a>
     </h3>
   </div>
 <% }); %>
