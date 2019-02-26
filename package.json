@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/mickeychcg/blogpulse/issues"
   },
-  "homepage": "https://github.com/mickeychcg/blogpulse#readme"
+  "homepage": "https://github.com/mickeychcg/blogpulse#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "ejs-layouts": "0.0.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "pg": "^7.8.1",
+    "sequelize": "^4.42.0"
+  }
 }
