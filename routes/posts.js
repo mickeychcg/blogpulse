@@ -6,6 +6,8 @@ const router = express.Router();
 router.get('/new', function(req,res) {
   db.author.findAll()
   .then(function(authors) {
+    req.session.lastPage = '/new/posts';
+    console.log("this is the session data... ", req.session.lastPage);
     res.render('posts/new', {authors});
   })
   .catch(function(error){
@@ -32,11 +34,10 @@ router.get('/:id', function(req, res) {
     where: {id: parseInt(req.params.id)},
     include: [db.author, db.comment]
   }).then(function(post) {
-    if (!post) throw Error();
-    res.render('posts/show', {post});
-  }).catch(function(error) {
-    res.status(500).render('main/500');
-  })
+    post.getTags().then(function(tags) {
+      res.render('posts/show', {post, tags});
+    })
+  });
 });
 
 

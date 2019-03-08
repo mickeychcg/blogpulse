@@ -1,11 +1,31 @@
+<div class="col-sm-3 sidenav">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active">
 <a href="/">&larr; Back Home</a>
+    </li>
+  </ul>
+</div>
 
-<h1><%= post.title %> by <%= post.author.name %></h1>
+<div class="col-sm-9">
 
-<p><%= post.content %></p>
-
-<div class="well">
+  <h1><%= post.title %> by <%= post.author.name %></h1>
   
+  <p><%= post.content %></p>
+  
+  <h4>Tags:</h4>
+  <% tags.forEach(function(tag) { %>
+    <a href="/tags/<%= tag.name%>"><%= tag.name %></a>
+  <% }); %>
+  
+  <h3>Add a New Tag:</h3>
+  <form action="/tags" method="POST">
+    <input type="text" name="name">
+    <input type="hidden" name="postId" value="<%= post.id %>">
+    <input type="submit" value="Tag it!">
+  </form>
+  
+
+    
   <h3>Comments</h3>
   <ul>
     <% post.comments.forEach(function(comment) { %>
@@ -13,19 +33,19 @@
       <p>&mdash; <%= comment.name %></p> </li>
       <% }); %>
   </ul>
-    
-<hr />
-    <h3>
-      <a href="/posts"<%= post.id %>"><%= post.comment %></a>
-    </h3>
-
-
-      <form action="/comments" method="POST">
-        <input hidden type="number" name="postId" value="<%= post.id %>" />
-        <input type="text" name="name" placeholder="Name..." /><br>
-        <textarea name="content" placeholder="" Comment here ></textarea><br>
-        <input type="submit" value="Comment">
-      </form>    
-    
-  </div>
+      
+  <hr />
+  <h3>
+    <a href="/posts"<%= post.id %>"><%= post.comment %></a>
+  </h3>
+  
+  
+    <form action="/comments" method="POST">
+      <input hidden type="number" name="postId" value="<%= post.id %>" />
+      <input type="text" name="name" placeholder="Name..." /><br>
+      <textarea name="content" placeholder="" Comment here ></textarea><br>
+      <input type="submit" value="Comment">
+    </form>    
+  
+</div>
     

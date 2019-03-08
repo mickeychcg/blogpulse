@@ -1,13 +1,18 @@
-<a href="/">&larr; Back Home</a>
+  <div class="col-sm-3 sidenav">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active">
+        <a href="/">&larr; Back Home</a>
+      </li>
+    </ul>
+  </div>
 
 <h1>Authors</h1>
 
 <% authors.forEach(function(author) { %>
-  <div class= "well">
+
     <h2><a href="/authors/<%= author.id %>"</a>
       <%= author.name %>
     </a></h2>
-    </div>
 <% }); %>
 
 <hr />

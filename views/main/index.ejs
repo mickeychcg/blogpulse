@@ -1,9 +1,15 @@
-<h1>Latest Posts from BlogPulse</h1>
 
-<a href="/authors">Show all Authors |</a>
-<a href="/authors/new">Add a new Author |</a>
-<a href="/posts/new">Add a new Post |</a>
+<div class="col-sm-3 sidenav">
+  <ul class="nav nav-pills nav-stacked"></li>
+    <li><a href="/authors">Show all Authors |</a></li>
+    <li><a href="/authors/new">Add a new Author |</a></li>
+    <li><a href="/posts/new">Add a new Post |</a></li>
+  </ul>
+</div>
 
+<div class="col-sm-9">
+  <h1>Latest Posts from BlogPulse</h1>
+</div>
 <% posts.forEach(function(post) { %>
   <div class="well">
     <h2>

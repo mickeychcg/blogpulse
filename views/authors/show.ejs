@@ -9,9 +9,7 @@
 <h2>Posts</h2>
 
 <% author.posts.forEach(function(post) { %>
-  <div class="well">
     <h3>
       <a href="/posts/<%= post.id %>"><%=post.title %></a>
     </h3>
-  </div>
 <% }); %>

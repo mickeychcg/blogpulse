@@ -1,0 +1,15 @@
+<a href="/">&larr; Back Home</a>
+
+<h1>Tags: <%= tag.name %></h1>
+
+<hr />
+
+<h2>Tags</h2>
+
+<% posts.forEach(function(post) { %>
+<div class="well">
+  <h3>
+    <a href="/posts/<%= post.id %>"><%= post.title %></a>
+  </h3>
+</div>
+<% }); %>

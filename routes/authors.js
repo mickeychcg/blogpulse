@@ -5,6 +5,8 @@ const router = express.Router();
 // GET /authors/new - sends the form for creating a new author
 router.get('/new', function(req, res) {
   res.render('authors/new');
+  req.session.lastPage = '/authors/new';
+  console.log("this is the session data... ", req.session.lastPage);
 });
 
 // POST /authors - creates a new author

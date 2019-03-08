@@ -1,14 +1,24 @@
-<a href="/">&larr; Back Home</a>
+<div class="col-sm-3 sidenav">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active">
+        <a href="/">&larr; Back Home</a>
+        </li>
+    </ul>
+</div>
+
+<div class="col-sm-9">
 
 <h2>Create a New Post</h2>
 
 <form action="/posts" method="POST">
   <select name="authorId" required>
-    <% authors.forEach(function(author) { %>
-        <option value="<%= author.id %>"><%= author.name %></option>
-    <% }); %>
-  </select>
-  <input type="text" name="title" placeholder="Title..." required />
-  <textarea type="text" name="content" placeholder="Post content..." required></textarea>
-  <input type="submit" value="Post!" />
-</form>   
+        <% authors.forEach(function(author) { %>
+            <option value="<%= author.id %>"><%= author.name %></option>
+        <% }); %>
+      </select>
+      <input type="text" name="title" placeholder="Title..." required />
+      <textarea type="text" name="content" placeholder="Post content..." required></textarea>
+      <input type="submit" value="Post!" />
+    </form>
+</div>
+
